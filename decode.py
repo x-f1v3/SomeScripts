@@ -72,9 +72,28 @@ def decode(s):
     if upper_flag:
         d_string1 = d_string1.upper()
         d_string2 = d_string2.upper()
-    print "first decode method result is:\n"+d_string1
-    print "second decode method result is:\n"+d_string2
-    return
+    # print "first decode method result is:\n"+d_string1
+    # print "second decode method result is:\n"+d_string2
+    return d_string1,d_string2
+
+
+
+def decode2(s):
+    decode_string1 = ""
+	decode_string2 = ""
+	mask=""
+	for index in s:
+		if index.isupper():
+			mask = mask + "b"   # up = b
+		else:
+			mask = mask + "a"   # low =a
+	print(mask)
+	tmp1,tmp2= decode(mask)
+	decode_string1 +=tmp1
+	decode_string2 +=tmp2
+
+	print "first decode method result is:\n"+decode_string1
+	print "second decode method result is:\n"+decode_string2
 
 
 
