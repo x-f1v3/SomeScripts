@@ -34,3 +34,36 @@ for b in a:
     print(init(b))
     
     
+
+# 输入指定字符串，返回随机大小写
+
+import random
+
+def random_list(start,stop,length):
+    if length>=0:
+        length=int(length)
+  	start, stop = (int(start), int(stop)) if start <= stop else (int(stop), int(start))
+  	random_list = []
+    for i in range(length):
+        random_list.append(random.randint(start, stop))
+    return random_list
+
+
+string = "string"
+
+alphalen = 0
+
+for s in string:
+	if s.isalpha():
+		alphalen +=1
+
+
+stringlist = list(string)
+randomlist = random_list(0,alphalen,random.randint(int(len(string)/3),int(len(string)/2)))
+
+for x in randomlist:
+	if stringlist[x].isalpha():
+		stringlist[x] = stringlist[x].upper()
+
+randomstring = ''.join(stringlist)
+print(randomstring)
