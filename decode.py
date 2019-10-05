@@ -24,8 +24,6 @@ for f in field:
 
 ### 培根
 
-# coding:utf8
-
 import re
 
 alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
@@ -34,9 +32,9 @@ first_cipher = ["aaaaa","aaaab","aaaba","aaabb","aabaa","aabab","aabba","aabbb",
 
 second_cipher = ["aaaaa","aaaab","aaaba","aaabb","aabaa","aabab","aabba","aabbb","abaaa","abaaa","abaab","ababa","ababb","abbaa","abbab","abbba","abbbb","baaaa","baaab","baaba","baabb","baabb","babaa","babab","babba","babbb"]
 
-def encode():
-    upper_flag = False # 用于判断输入是否为大写
-    string = raw_input("please input string to encode:\n")
+def encode(s):
+    upper_flag = False 
+    string = s
     if string.isupper():
         upper_flag = True
         string = string.lower()
@@ -56,9 +54,9 @@ def encode():
     return
 
 
-def decode():
-    upper_flag = False  # 用于判断输入是否为大写
-    e_string = raw_input("please input string to decode:\n")
+def decode(s):
+    upper_flag = False 
+    e_string = s
     if e_string.isupper():
         upper_flag = True
         e_string = e_string.lower()
@@ -77,6 +75,8 @@ def decode():
     print "first decode method result is:\n"+d_string1
     print "second decode method result is:\n"+d_string2
     return
+
+
 
 
 ### ASCII 移位 decode
