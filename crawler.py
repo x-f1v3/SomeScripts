@@ -3,6 +3,9 @@ import urllib3
 urllib3.disable_warnings()
 import re
 
+'''
+python3 爬虫demo
+'''
 url="https://127.0.0.1/?id={}"
 s = requests.session()
 s.keep_alive = False
