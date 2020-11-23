@@ -6,3 +6,4 @@
 * jietu.py 浏览器访问url自动批量截图
 * ThreadDemoForCrawler.py 多线程爬虫demo
 * mysql2execl.py 查询mysql数据并输出成表格
+* monitor.py  定时监控加钉钉通知
