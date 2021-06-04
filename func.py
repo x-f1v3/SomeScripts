@@ -67,3 +67,25 @@ for x in randomlist:
 
 randomstring = ''.join(stringlist)
 print(randomstring)
+
+
+#解析http请求文本
+
+def parse_requests(file):
+    requests={}
+    if check_file(file):
+        with open(file, 'r', encoding='UTF-8') as f:
+            r = f.readlines()
+
+        for line in r:
+            if line.startswith("Host"):
+                requests['host']=re.findall("^Host:(.*?)\\n",line)[0].strip()
+            if line.endswith("HTTP/1.1\n"):
+                requests['method'] = re.findall("^(.*?)\s",line)[0].strip()
+                requests['uri']=re.findall("\s(.*?)HTTP/1.1\\n$",line)[0].strip()
+        if r[-1] !="\n":
+            requests['body']=r[-1]
+
+
+
+        return requests
