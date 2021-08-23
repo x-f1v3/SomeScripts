@@ -7,3 +7,4 @@
 * ThreadDemoForCrawler.py 多线程爬虫demo
 * mysql2execl.py 查询mysql数据并输出成表格
 * monitor.py  定时监控加钉钉通知
+* check_md5.py 比对不同文件夹下的所有文件Md5，不同则输出
