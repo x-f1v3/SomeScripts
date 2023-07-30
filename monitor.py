@@ -33,6 +33,22 @@ def dingtalk(content):
 
     r = requests.post(url=webhook_url, headers=dd_headers, data=json.dumps(dd_message))
 
+def weixin(message):
+    webhook_url = "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=YOUR_TOKEN"
+    wx_headers = {
+        "Content-Type": "application/json",
+        "Charset": "UTF-8",
+        "User-Agent":"Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Win64; x64; Trident/5.0)"
+    }
+    wx_message = {
+        "msgtype": "markdown",
+        "markdown": {
+             "content":message
+             }
+    } 
+    r = requests.post(url=webhook_url, headers=wx_headers, data=json.dumps(wx_message))
+
+
 def Task():
         url = "YOUR_URL"
         r = requests.get(url,headers=headers,verify=False)
